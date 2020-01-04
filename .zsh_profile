@@ -1,0 +1,130 @@
+#   -------------------------------
+#   ENVIRONMENT CONFIGURATION
+#   -------------------------------
+
+#   -----------------------------
+#   MAKE TERMINAL BETTER
+#   -----------------------------
+
+#   -----------------------------
+#   ALIAS
+#   -----------------------------
+
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
+alias ll='ls -lrt'                          # Preferred 'll' implementation
+alias ls='ls -GFh'                          # Preferred 'ls' implementation
+alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                           # Go back 1 directory level
+alias ...='cd ../../'                       # Go back 2 directory levels
+alias .3='cd ../../../'                     # Go back 3 directory levels
+alias .4='cd ../../../../'                  # Go back 4 directory levels
+alias .5='cd ../../../../../'               # Go back 5 directory levels
+alias .6='cd ../../../../../../'            # Go back 6 directory levels
+alias .7='cd ../../../../../../../'         # Go back 7 directory levels
+alias .8='cd ../../../../../../../../'      # Go back 8 directory levels
+alias f='open -a Finder ./'                 # Opens current directory in MacOS Finder
+alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
+alias gloc="git ls-files | xargs wc -l"     # Get lines of code in a git repository
+alias gof="go fmt ./..."					# Formats all go files in the directory
+alias x='exit'								# Exit from a console tab
+trash () { command mv "$@" ~/.Trash ; }     # Moves a file to the MacOS trash
+
+#   lr:  Full Recursive Directory Listing
+#   ------------------------------------------
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+
+#   -----------------------------
+#   FUNCTIONS
+#   -----------------------------
+
+#   gop: Set GOPATH to current directory
+#   ------------------------------------------
+gop(){
+	wd=`pwd`
+	export GOPATH=$wd
+}
+
+#   git-clean-local-branch: Cleans local git branches that are not available on the server
+#   ------------------------------------------
+git-clean-local-branch(){
+	git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+}
+
+#   dc: Cleans exited containers and dangling images
+#   ------------------------------------------
+dc(){
+	docker ps -aq --no-trunc -f status=exited | xargs docker rm
+	docker images -q --filter dangling=true | xargs docker rmi
+}
+
+#   eks-update-config: Update the Kubernetes CLI confifuration to set a new EKS context
+#   ------------------------------------------
+eks-update-config(){
+	if [[ $# -lt 1 || $# -gt 1 ]] ;then
+    		echo "Usage: eks-update-config <EKS_CLUSTER_NAME>"
+	else
+		echo "Setting the context to the cluster $1"
+        aws eks update-kubeconfig --region eu-west-1 --name $1
+	fi
+}
+
+#   eks-set-namespace-cc: Update the Kubernetes CLI confifuration to set default namespace to the current context
+#   ------------------------------------------
+eks-set-namespace-cc(){
+	if [[ $# -lt 1 || $# -gt 1 ]] ;then
+    		echo "Usage: eks-set-namespace-cc <NAMESPACE>"
+	else
+        kubectl config set-context --current --namespace $1
+	fi
+}
+
+#   intellij: Opens Intellij with current directory as the work directory
+#   ------------------------------------------
+intellij(){
+	IDEA=`ls -1d /Applications/IntelliJ\ * | tail -n1`
+	wd=`pwd`
+
+	# were we given a directory?
+	if [ -d "$1" ]; then
+	#  echo "checking for things in the working dir given"
+	  wd=`ls -1d "$1" | head -n1`
+	fi
+
+	# were we given a file?
+	if [ -f "$1" ]; then
+	#  echo "opening '$1'"
+	  open -a "$IDEA" "$1"
+	else
+	    # let's check for stuff in our working directory.
+	    pushd $wd > /dev/null
+
+	    # does our working dir have an .idea directory?
+	    if [ -d ".idea" ]; then
+	#      echo "opening via the .idea dir"
+	      open -a "$IDEA" .
+
+	    # is there an IDEA project file?
+	    elif [ -f *.ipr ]; then
+	#      echo "opening via the project file"
+	      open -a "$IDEA" `ls -1d *.ipr | head -n1`
+
+	    # Is there a pom.xml?
+	    elif [ -f pom.xml ]; then
+	#      echo "importing from pom"
+	      open -a "$IDEA" "pom.xml"
+
+	    # can't do anything smart; just open IDEA
+	    else
+	#      echo 'cbf'
+	      open "$IDEA"
+	    fi
+
+	    popd > /dev/null
+	fi
+}
+
+#   ------------------------------------------
+#   EOF
+#   ------------------------------------------
