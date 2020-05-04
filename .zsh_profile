@@ -29,6 +29,8 @@ alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
 alias gloc="git ls-files | xargs wc -l"     # Get lines of code in a git repository
 alias gof="go fmt ./..."					# Formats all go files in the directory
 alias x='exit'								# Exit from a console tab
+alias python=/usr/local/bin/python3			# Make python3 default
+alias pip=/usr/local/bin/pip3				# Make pip3 default
 trash () { command mv "$@" ~/.Trash ; }     # Moves a file to the MacOS trash
 
 #   lr:  Full Recursive Directory Listing
