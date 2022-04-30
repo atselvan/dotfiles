@@ -3,15 +3,14 @@
 
 # Your Macbook user name
 # https://support.apple.com/guide/mac-help/if-you-forgot-your-user-or-account-name-mh35548/mac
-export MAC_USER="atselvan"
+export MAC_USER="allanselvan"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$MAC_USER/.oh-my-zsh"
 
 # Update Path variable
 GO_BIN_PATH="/Users/$MAC_USER/go/bin"
-#ANACONDA_BIN_PATH="/usr/local/anaconda3/bin"
-export PATH="$PATH:$GO_BIN_PATH:$ANACONDA_BIN_PATH"
+export PATH="$PATH:$GO_BIN_PATH"
 
 # Import profiles
 source ~/.zsh_theme_conf
@@ -133,3 +132,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

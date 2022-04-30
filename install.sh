@@ -8,14 +8,11 @@
 # 3. Configure Terminal
 # 4. Install required software using brew bundle
 
-# Variables
-export MAC_USER=""
-
 # Git configuration
 # If the varible is not set git configuration step will be skipped.
 GIT_CONFIG='[user]
-    name = 
-    email = 
+    name = Allan Selvan
+    email = allantony2008@gmail.com
 [alias]
 	permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 [core]
@@ -28,14 +25,16 @@ GIT_CONFIG_PATH="~/.gitconfig"
 
 # Create base folder structure
 
-mkdir /Users/$MAC_USER/workspace /Users/$MAC_USER/workspace/code /Users/$MAC_USER/workspace/code/gh /Users/$MAC_USER/workspace/code/lo /Users/$MAC_USER/workspace/code/lo/py /Users/$MAC_USER/workspace/code/bb /Users/$MAC_USER/workspace/code/ag
+mkdir ~/workspace ~/workspace/code
 
 # Install Homebrew
 # Homebrew is the open source package manager of choice for the Mac.
 if ! command -v brew > /dev/null
 then
     echo "Installing homebrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    brew update
 fi
 
 # Install and configure Git
@@ -57,7 +56,6 @@ fi
 
 echo "Configuring terminal"
 
-brew install zsh
 brew install zsh-completions
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
@@ -71,19 +69,17 @@ cp -rp .zsh* ~
 echo "Copying servers.conf file"
 cp -r -p servers.conf ~/.servers
 
-echo "Installing powerlevel9k theme for ohmyzsh"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+echo "Installing powerlevel10k theme for ohmyzsh"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 
-echo "Installing powerline fonts"
-git clone https://github.com/powerline/fonts
-./fonts/install.sh
-rm -rf fonts
+# echo "Installing powerline fonts"
+# git clone https://github.com/powerline/fonts
+# ./fonts/install.sh
+# rm -rf fonts
 
 # Brew Bundle
 echo "Installing brew bundle"
 brew bundle -v
 brew install hudochenkov/sshpass/sshpass
-
-unset HTTP_PROXY HTTPS_PROXY
 
 # END

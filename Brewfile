@@ -1,14 +1,12 @@
 # Taps
 
 tap "azure/functions"
-tap "garethr/kubeval"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "hudochenkov/sshpass"
-tap "sonatype/nexus-iq-cli"
 tap "weaveworks/tap"
 
 # Brew's
@@ -18,7 +16,6 @@ brew "ansible", link: false
 brew "python@3.9"
 brew "awscli"
 brew "azure-cli"
-brew "bash-completion"
 brew "glib"
 brew "ctop"
 brew "cql"
@@ -36,7 +33,6 @@ brew "hugo"
 brew "jq"
 brew "kubernetes-cli"
 brew "kubectx"
-brew "kubens"
 brew "mas"
 brew "maven"
 brew "mockery"
@@ -47,7 +43,6 @@ brew "opa"
 brew "putty"
 brew "sl"
 brew "sonar-scanner"
-brew "subversion"
 brew "thefuck"
 brew "telnet"
 brew "terraform"
@@ -69,20 +64,15 @@ cask "adoptopenjdk"
 cask "apache-directory-studio"
 cask "azure-data-studio"
 cask "docker"
-cask "firefox"
 cask "font-fantasque-sans-mono"
 cask "font-jetbrains-mono"
 cask "gimp"
 cask "google-chrome"
-cask "intellij-idea"
 cask "iterm2"
-cask "jetbrains-toolbox"
 cask "keystore-explorer"
 cask "lens"
-cask "macpass"
 cask "mysql-shell"
 cask "mysqlworkbench"
-cask "nexus-iq-cli"
 cask "notion"
 cask "postman"
 cask "powershell"
@@ -98,3 +88,8 @@ mas "Magnet", id: 441258766
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Pocket", id: 568494494
 mas "Save to Pocket", id: 1477385213
+mas "Slack for Desktop", id: 803453959
+mas "WhatsApp Desktop", id: 1147396723
+mas "HP Smart", id: 1474276998
+mas "Termius", id: 1176074088
+mas "Grammarly for Safari", id: 1462114288
