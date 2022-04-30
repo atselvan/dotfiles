@@ -1,6 +1,9 @@
+#!/bin/zsh
+
 #   -------------------------------
 #   ENVIRONMENT CONFIGURATION
 #   -------------------------------
+PATH="/usr/local/opt/openjdk/bin:/usr/local/opt/libpq/bin:$PATH"
 
 #   -----------------------------
 #   MAKE TERMINAL BETTER
@@ -10,6 +13,7 @@
 #   ALIAS
 #   -----------------------------
 
+# Generic
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
@@ -26,12 +30,45 @@ alias .7='cd ../../../../../../../'         # Go back 7 directory levels
 alias .8='cd ../../../../../../../../'      # Go back 8 directory levels
 alias f='open -a Finder ./'                 # Opens current directory in MacOS Finder
 alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
-alias gloc="git ls-files | xargs wc -l"     # Get lines of code in a git repository
-alias gof="go fmt ./..."					# Formats all go files in the directory
 alias x='exit'								# Exit from a console tab
-alias python=/usr/local/bin/python3			# Make python3 default
-alias pip=/usr/local/bin/pip3				# Make pip3 default
 trash () { command mv "$@" ~/.Trash ; }     # Moves a file to the MacOS trash
+alias src="source ~/.zshrc"					# Reload zsh
+
+# Open Mac Apps
+alias macpass='open /Applications/MacPass.app'
+
+# Git
+alias gloc="git ls-files | xargs wc -l"		# Get lines of code in a git repository
+
+# Golang
+alias gof="go fmt ./..."							# Formats all go files in the directory
+alias gox="gox -os='linux darwin' -arch='amd64' -output='bin/{{.Dir}}-{{.OS}}-{{.Arch}}'"	 # Gox Build
+alias gocov='go test ./... -cover -coverprofile=c.out'	# Calculate coverage
+alias gocovh='go test ./... -cover -coverprofile=c.out && go tool cover -html=c.out -o coverage.html && open coverage.html' # Calculate coverage and genrate html
+
+# Python
+# assumes:
+#	- that you are in the root of your python project
+#	- that you use pytest for testing your puthon code
+#	- that you use coverage.py for calculating coverate
+alias ave='source $(pwd)/venv/bin/activate && export PYTHONPATH=$(pwd)/src' 										# Activate python virtual environment
+alias dve='deactivate && unset PYTHONPATH'																# Deactivate python virtual environment
+alias pytest='pytest'																# Run tests
+alias pycov="coverage run -m pytest"												# Run tests and calculate coverage
+alias pycovr="pycov && coverage report --omit='venv/*'" 							# Calculate coverage and generate report
+alias pycovh="pycov && coverage html --omit='venv/*' && open htmlcov/index.html" 	# Calculate coverage and generate html report
+
+# docker
+alias dco="docker-compose"		# Run docker-compose
+
+# kubernetes
+alias k="kubectl"
+alias kg="kubectl get"
+alias kd="kubectl describe"
+alias kcg="kubectl config get-contexts"
+alias kcc="kubectl config current-context"
+alias kcs="kubectl config set-context"
+alias kcu="kubectl config use-context"
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
@@ -57,75 +94,35 @@ git-clean-local-branch(){
 #   dc: Cleans exited containers and dangling images
 #   ------------------------------------------
 dc(){
-	docker ps -aq --no-trunc -f status=exited | xargs docker rm
+	docker ps -aq --no-trunc | xargs docker rm -f
 	docker images -q --filter dangling=true | xargs docker rmi
 }
 
-#   eks-update-config: Update the Kubernetes CLI confifuration to set a new EKS context
+#   sonar-cloud-scan: Scans a Sonar Cloud project
 #   ------------------------------------------
-eks-update-config(){
-	if [[ $# -lt 1 || $# -gt 1 ]] ;then
-    		echo "Usage: eks-update-config <EKS_CLUSTER_NAME>"
+sonar-cloud-scan(){
+	if [ -f sonar-project.properties ]; then
+		sonar-scanner -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login=""
 	else
-		echo "Setting the context to the cluster $1"
-        aws eks update-kubeconfig --region eu-west-1 --name $1
+		echo "./sonar-project.properties file was not found"
 	fi
 }
 
-#   eks-set-namespace-cc: Update the Kubernetes CLI confifuration to set default namespace to the current context
+#   sonar-scan: Scans a Sonar Project
 #   ------------------------------------------
-eks-set-namespace-cc(){
-	if [[ $# -lt 1 || $# -gt 1 ]] ;then
-    		echo "Usage: eks-set-namespace-cc <NAMESPACE>"
+sonar-scan(){
+	if [ -f sonar-project.properties ]; then
+		if [ -z "$1" ]; then
+      		echo "Usage: sonar-scan <version>"
+		else
+			sonar-scanner -Dsonar.projectVersion=$1
+		fi
 	else
-        kubectl config set-context --current --namespace $1
+		echo "./sonar-project.properties file was not found"
 	fi
 }
 
-#   intellij: Opens Intellij with current directory as the work directory
-#   ------------------------------------------
-intellij(){
-	IDEA=`ls -1d /Applications/IntelliJ\ * | tail -n1`
-	wd=`pwd`
 
-	# were we given a directory?
-	if [ -d "$1" ]; then
-	#  echo "checking for things in the working dir given"
-	  wd=`ls -1d "$1" | head -n1`
-	fi
-
-	# were we given a file?
-	if [ -f "$1" ]; then
-	#  echo "opening '$1'"
-	  open -a "$IDEA" "$1"
-	else
-	    # let's check for stuff in our working directory.
-	    pushd $wd > /dev/null
-
-	    # does our working dir have an .idea directory?
-	    if [ -d ".idea" ]; then
-	#      echo "opening via the .idea dir"
-	      open -a "$IDEA" .
-
-	    # is there an IDEA project file?
-	    elif [ -f *.ipr ]; then
-	#      echo "opening via the project file"
-	      open -a "$IDEA" `ls -1d *.ipr | head -n1`
-
-	    # Is there a pom.xml?
-	    elif [ -f pom.xml ]; then
-	#      echo "importing from pom"
-	      open -a "$IDEA" "pom.xml"
-
-	    # can't do anything smart; just open IDEA
-	    else
-	#      echo 'cbf'
-	      open "$IDEA"
-	    fi
-
-	    popd > /dev/null
-	fi
-}
 
 #   ------------------------------------------
 #   EOF

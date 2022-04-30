@@ -1,12 +1,23 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Your Macbook user name
+# https://support.apple.com/guide/mac-help/if-you-forgot-your-user-or-account-name-mh35548/mac
+export MAC_USER="atselvan"
+
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/atselvan/.oh-my-zsh"
+export ZSH="/Users/$MAC_USER/.oh-my-zsh"
+
+# Update Path variable
+GO_BIN_PATH="/Users/$MAC_USER/go/bin"
+#ANACONDA_BIN_PATH="/usr/local/anaconda3/bin"
+export PATH="$PATH:$GO_BIN_PATH:$ANACONDA_BIN_PATH"
 
 # Import profiles
 source ~/.zsh_theme_conf
 source ~/.zsh_profile
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
@@ -15,7 +26,7 @@ autoload -Uz compinit && compinit -i
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,22 +89,22 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
     aws
     brew
-    django
     docker
     encode64
     git
     jira
     kubectl
     last-working-dir
+    history-substring-search
     mvn
-    osx
-    pip
+    macos
     pylint
-    python
+    virtualenv
     svn
     vscode
     web-search
-    )
+    zsh-navigation-tools
+)
 
 source $ZSH/oh-my-zsh.sh
 
