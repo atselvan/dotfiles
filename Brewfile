@@ -12,8 +12,10 @@ tap "weaveworks/tap"
 # Brew's
 
 brew "python@3.10"
+brew "python-tk@3.10"
 brew "ansible", link: false
 brew "python@3.9"
+brew "python-tk@3.9"
 brew "awscli"
 brew "azure-cli"
 brew "glib"
@@ -80,11 +82,13 @@ cask "remote-desktop-manager"
 cask "stats"
 cask "tableplus"
 cask "visual-studio-code"
+cask "firefox"
+cask "rectangle"
+cask "alt-tab"
 
 # Mac Apps
 
 mas "Amphetamine", id: 937984704
-mas "Magnet", id: 441258766
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Pocket", id: 568494494
 mas "Save to Pocket", id: 1477385213
@@ -93,3 +97,4 @@ mas "WhatsApp Desktop", id: 1147396723
 mas "HP Smart", id: 1474276998
 mas "Termius", id: 1176074088
 mas "Grammarly for Safari", id: 1462114288
+mas "Color Picker", id: 1545870783
