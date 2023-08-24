@@ -47,6 +47,7 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "hudochenkov/sshpass/sshpass"
+brew "romkatv/powerlevel10k/powerlevel10k"
 
 # Cask's
 

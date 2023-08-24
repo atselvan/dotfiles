@@ -66,20 +66,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Copying .zsh files to ~"
 cp -rp .zsh* ~
 
-echo "Copying servers.conf file"
-cp -r -p servers.conf ~/.servers
-
 echo "Installing powerlevel10k theme for ohmyzsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 
-# echo "Installing powerline fonts"
-# git clone https://github.com/powerline/fonts
-# ./fonts/install.sh
-# rm -rf fonts
-
 # Brew Bundle
 echo "Installing brew bundle"
-brew bundle -v
-brew install hudochenkov/sshpass/sshpass
+brew bundle install -v
+
+source ~/.zshrc
 
 # END
