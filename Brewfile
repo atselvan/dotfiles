@@ -13,7 +13,6 @@ tap "weaveworks/tap"
 
 brew "python"
 brew "ansible"
-brew "awscli"
 brew "azure-cli"
 brew "glib"
 brew "cql"
@@ -22,37 +21,27 @@ brew "libidn2"
 brew "curl"
 brew "dos2unix"
 brew "dotnet"
-brew "gh"
 brew "git"
 brew "gitversion"
 brew "go"
 brew "openjdk"
-brew "groovysdk"
 brew "helm"
 brew "htop"
-brew "hugo"
 brew "jq"
 brew "kubernetes-cli"
-brew "kubectx"
 brew "mas"
 brew "maven"
-brew "mockery"
-brew "nghttp2"
 brew "nmap"
 brew "node"
 brew "opa"
-brew "putty"
 brew "sl"
 brew "sonar-scanner"
 brew "telnet"
-brew "terraform"
 brew "thefuck"
 brew "tmux"
 brew "tree"
-brew "vault"
 brew "watch"
 brew "wget"
-brew "yarn"
 brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
@@ -61,11 +50,8 @@ brew "hudochenkov/sshpass/sshpass"
 
 # Cask's
 
-cask "adoptopenjdk"
-cask "alt-tab"
+# cask "alt-tab"
 cask "anki"
-cask "apache-directory-studio"
-cask "azure-data-studio"
 cask "docker"
 cask "firefox"
 cask "font-fantasque-sans-mono"
@@ -74,7 +60,6 @@ cask "gimp"
 cask "google-chrome"
 cask "iterm2"
 cask "keystore-explorer"
-cask "lens"
 cask "mysql-shell"
 cask "mysqlworkbench"
 cask "notion"
@@ -88,7 +73,7 @@ cask "tableplus"
 cask "visual-studio-code"
 cask "vnc-viewer"
 
-# MAC Apps
+# MAC Store Apps
 
 mas "Amphetamine", id: 937984704
 mas "Color Picker", id: 1545870783
@@ -97,9 +82,11 @@ mas "Grammarly for Safari", id: 1462114288
 mas "HP Smart", id: 1474276998
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
+mas "Mimeo Photos", id: 1282504627
 mas "Pocket", id: 568494494
 mas "Save to Pocket", id: 1477385213
 mas "Slack", id: 803453959
+mas "Tailscale", id: 1475387142
 mas "Termius", id: 1176074088
 mas "WhatsApp", id: 1147396723
 
