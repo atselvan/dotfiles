@@ -24,12 +24,12 @@ brew "dotnet"
 brew "git"
 brew "gitversion"
 brew "go"
-brew "openjdk"
 brew "helm"
 brew "htop"
 brew "jq"
 brew "kubernetes-cli"
 brew "mas"
+brew "openjdk"
 brew "maven"
 brew "nmap"
 brew "node"
@@ -47,14 +47,12 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "hudochenkov/sshpass/sshpass"
-brew "romkatv/powerlevel10k/powerlevel10k"
 
 # Cask's
 
 # cask "alt-tab"
 cask "anki"
 cask "docker"
-cask "firefox"
 cask "font-fantasque-sans-mono"
 cask "font-jetbrains-mono"
 cask "gimp"
@@ -81,11 +79,10 @@ mas "Color Picker", id: 1545870783
 mas "Disk Speed Test", id: 425264550
 mas "Grammarly for Safari", id: 1462114288
 mas "HP Smart", id: 1474276998
+mas "iMovie", id: 408981434
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "Mimeo Photos", id: 1282504627
-mas "Pocket", id: 568494494
-mas "Save to Pocket", id: 1477385213
+mas "Notion Web Clipper", id: 1559269364
 mas "Slack", id: 803453959
 mas "Tailscale", id: 1475387142
 mas "Termius", id: 1176074088
