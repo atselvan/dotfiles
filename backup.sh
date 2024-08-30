@@ -4,7 +4,7 @@
 # - ~/.zsh*
 # - ~/.servers
 
-files=("zshrc" "zsh_theme_conf" "zsh_profile" "p10k.zsh")
+files=("zshrc" "zsh_profile" "p10k.zsh")
 
 for file in "${files[@]}"; do
     cp -rp ~/.${file} ./

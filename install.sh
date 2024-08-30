@@ -32,7 +32,7 @@ mkdir ~/workspace ~/workspace/code
 if ! command -v brew > /dev/null
 then
     echo "Installing homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
     brew update
 fi
@@ -56,18 +56,25 @@ fi
 
 echo "Configuring terminal"
 
+brew install zsh
 brew install zsh-completions
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
 echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ -d "~/.oh-my-zsh" ]
+then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 echo "Copying .zsh files to ~"
 cp -rp .zsh* ~
 
 echo "Installing powerlevel10k theme for ohmyzsh"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+if [ -d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]
+then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
 
 # Brew Bundle
 echo "Installing brew bundle"

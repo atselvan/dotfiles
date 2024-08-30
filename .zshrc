@@ -1,9 +1,16 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Your Macbook user name
 # https://support.apple.com/guide/mac-help/if-you-forgot-your-user-or-account-name-mh35548/mac
-export MAC_USER="allanselvan"
+export MAC_USER="atselvan"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$MAC_USER/.oh-my-zsh"
@@ -13,7 +20,6 @@ GO_BIN_PATH="/Users/$MAC_USER/go/bin"
 export PATH="$PATH:$GO_BIN_PATH"
 
 # Import profiles
-source ~/.zsh_theme_conf
 source ~/.zsh_profile
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -86,22 +92,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    aws
     brew
     docker
     encode64
     git
-    jira
     kubectl
     last-working-dir
     history-substring-search
-    mvn
     macos
     pylint
     virtualenv
-    svn
     vscode
-    web-search
     zsh-navigation-tools
 )
 
@@ -133,4 +134,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
