@@ -45,6 +45,7 @@ cask "qbittorrent"
 cask "rectangle"
 cask "tableplus"
 cask "visual-studio-code"
+cask "git-credential-manager"
 
 # MAC Store Apps
 
