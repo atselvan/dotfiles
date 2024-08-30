@@ -46,6 +46,7 @@ cask "rectangle"
 cask "tableplus"
 cask "visual-studio-code"
 cask "git-credential-manager"
+cask "logi-options-plus"
 
 # MAC Store Apps
 

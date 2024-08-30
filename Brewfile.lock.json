@@ -1084,6 +1084,12 @@
         "options": {
           "full_name": "git-credential-manager"
         }
+      },
+      "logi-options-plus": {
+        "version": null,
+        "options": {
+          "full_name": "logi-options-plus"
+        }
       }
     },
     "mas": {
