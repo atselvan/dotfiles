@@ -1038,7 +1038,7 @@
         }
       },
       "notion": {
-        "version": "3.13.0",
+        "version": "3.13.1",
         "options": {
           "full_name": "notion"
         }
@@ -1089,6 +1089,12 @@
         "version": null,
         "options": {
           "full_name": "logi-options-plus"
+        }
+      },
+      "handbrake": {
+        "version": "1.8.2",
+        "options": {
+          "full_name": "handbrake"
         }
       }
     },

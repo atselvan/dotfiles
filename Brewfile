@@ -47,6 +47,7 @@ cask "tableplus"
 cask "visual-studio-code"
 cask "git-credential-manager"
 cask "logi-options-plus"
+cask "handbrake"
 
 # MAC Store Apps
 
