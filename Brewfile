@@ -30,6 +30,9 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "hudochenkov/sshpass/sshpass"
 
+# Golang Brews
+brew "golang-migrate"
+
 # Cask's
 
 cask "anki"

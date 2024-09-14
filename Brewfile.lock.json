@@ -998,6 +998,50 @@
       "hudochenkov/sshpass/sshpass": {
         "version": "1.06",
         "bottle": false
+      },
+      "golang-migrate": {
+        "version": "4.17.1",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/golang-migrate/blobs/sha256:7e81f131507f13b6436236740395664cf1c3dd34d61492ea84468a8ac2493fc9",
+              "sha256": "7e81f131507f13b6436236740395664cf1c3dd34d61492ea84468a8ac2493fc9"
+            },
+            "arm64_ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/golang-migrate/blobs/sha256:63f4bd2cf8edbe7b867d86d5367cc7b9ba4b693aca068fd347ea99f3c53c8ab6",
+              "sha256": "63f4bd2cf8edbe7b867d86d5367cc7b9ba4b693aca068fd347ea99f3c53c8ab6"
+            },
+            "arm64_monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/golang-migrate/blobs/sha256:6db78f02ed670b746c7b007cb046548f9459d68974486a70665e70605f31f04e",
+              "sha256": "6db78f02ed670b746c7b007cb046548f9459d68974486a70665e70605f31f04e"
+            },
+            "sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/golang-migrate/blobs/sha256:0f539c53a1ce71100d8fd697a7f4b31cad26e9da7f211bfc7d7fd9d94a4f405b",
+              "sha256": "0f539c53a1ce71100d8fd697a7f4b31cad26e9da7f211bfc7d7fd9d94a4f405b"
+            },
+            "ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/golang-migrate/blobs/sha256:9905fc6847ab4e7f942dd156349a736c4977e6fbae43418bb36d04c0c85b70a5",
+              "sha256": "9905fc6847ab4e7f942dd156349a736c4977e6fbae43418bb36d04c0c85b70a5"
+            },
+            "monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/golang-migrate/blobs/sha256:edb6275cf8e2c06be555737c85af1fc2000c851df0372729f2e55883c5aed247",
+              "sha256": "edb6275cf8e2c06be555737c85af1fc2000c851df0372729f2e55883c5aed247"
+            },
+            "x86_64_linux": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/golang-migrate/blobs/sha256:4bb6eaab27a550fe2dedbfd43955918e0dc014bd35f9a4727d48114b5670c3db",
+              "sha256": "4bb6eaab27a550fe2dedbfd43955918e0dc014bd35f9a4727d48114b5670c3db"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -1173,7 +1217,9 @@
       "wayou.vscode-todo-highlight": null,
       "wholroyd.jinja": null,
       "xabikos.javascriptsnippets": null,
-      "yzhang.markdown-all-in-one": null
+      "yzhang.markdown-all-in-one": null,
+      "equinusocio.vsc-material-theme": null,
+      "equinusocio.vsc-material-theme-icons": null
     }
   },
   "system": {
