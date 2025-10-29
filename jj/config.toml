@@ -1,0 +1,27 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Allan Tony Selvan"
+email = "allan.tony.selvan@nl.abnamro.com"
+
+[ui]
+default-command = "log"
+show-cryptographic-signatures = true
+editor = "code --wait"
+
+[git]
+write-change-id-header = true
+
+[templates]
+commit_trailers = '''
+format_signed_off_by_trailer(self)'''
+
+[aliases]
+mon = [
+    "util",
+    "exec",
+    "--",
+    "sh",
+    "-c",
+    "clear; jj --ignore-working-copy --no-pager --color always log; fswatch -o `jj root`/.jj | xargs -I{} sh -c 'clear; jj --ignore-working-copy --no-pager --color always log'",
+]

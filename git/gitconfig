@@ -1,0 +1,7 @@
+[user]
+    name = Allan Selvan
+    email = allantony2008@gmail.com
+[alias]
+	permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
+[core]
+	autocrlf = input
