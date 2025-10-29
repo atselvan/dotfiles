@@ -14,6 +14,7 @@ brew "jq"
 brew "mas"
 brew "nvm"
 brew "jj"
+brew "gpg"
 
 # Cask's
 
