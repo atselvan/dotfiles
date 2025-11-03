@@ -22,7 +22,6 @@ $java\
 $kotlin\
 $python\
 ${custom.end_transition}\
-$cmd_duration\
 $line_break\
 $character
 """
@@ -31,16 +30,36 @@ palette = 'catppuccin_mocha'
 
 # Better conditional transitions
 [custom.git_transition]
-when = "git rev-parse --is-inside-work-tree 2>/dev/null"
-format = """[](yellow)"""
+when = "git rev-parse --is-inside-work-tree"
+symbol = ""
+style = "yellow"
+format = "[$symbol]($style)"
 
 [custom.lang_transition]
-when = """test "$JAVA_VERSION" || test "$PYTHON_VERSION" || test "$NODE_VERSION" || test "$GO_VERSION" || test "$RUBY_VERSION" || test "$RUST_VERSION" """
-format = "[](bg:green fg:yellow)"
+detect_files =  [ "go.mod", "package.json" ]
+detect_extensions = [ "java", "py", "js", "ts", "go" ]
+symbol = ""
+style = "bg:green fg:yellow"
+format = "[$symbol]($style)"
 
 [custom.end_transition]
-when = """test "$JAVA_VERSION" || test "$PYTHON_VERSION" || test "$NODE_VERSION" || test "$GO_VERSION" || test "$RUBY_VERSION" || test "$RUST_VERSION" """
-format = "[](green)"
+detect_files =  [ "go.mod", "package.json" ]
+detect_extensions = [ "java", "py", "js", "ts", "go" ]
+symbol = ""
+style = "green"
+format = "[$symbol]($style)"
+
+[custom.example1]
+command = "echo '*'"
+when = "true"           # Returns a `0` status code
+style = "fg:red"
+shell = "bash"
+
+[custom.example2]
+when = "true"           # Returns a `0` status code
+style = "green bold"
+symbol = "T"
+format = "[$symbol]($style)"
 
 [fill]
 symbol = ' '
@@ -158,14 +177,6 @@ vimcmd_symbol = '[❮](bold fg:green)'
 vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
 vimcmd_replace_symbol = '[❮](bold fg:lavender)'
 vimcmd_visual_symbol = '[❮](bold fg:yellow)'
-
-[cmd_duration]
-style = "bg:lavender fg:crust"
-format = "[ 󰔛 $duration ]($style)"
-min_time = 2_000
-show_milliseconds = true
-show_notifications = true
-min_time_to_notify = 45_000
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
