@@ -3,6 +3,11 @@
 
 # Brew's
 
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+brew "powerlevel10k"
 brew "nushell"
 brew "starship"
 brew "carapace"
@@ -40,7 +45,9 @@ cask "iina"
 cask "monitorcontrol"
 cask "app-cleaner"
 cask "alt-tab"
-cask "TheBoredTeam/boring-notch/boring-notch"
+cask "affinity"
+cask "archi"
+cask "lulu"
 
 
 # MAC Store Apps
@@ -49,6 +56,7 @@ mas "HP", id: 1474276998
 mas "Notion Web Clipper", id: 1559269364
 mas "WhatsApp Messenger", id: 310633997
 mas "Pandan", id: 1569600264
+mas "Pastel", id: 413897608
 
 # VSCode plugins
 
