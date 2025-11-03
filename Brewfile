@@ -48,7 +48,7 @@ cask "alt-tab"
 cask "affinity"
 cask "archi"
 cask "lulu"
-
+cask "aldente"
 
 # MAC Store Apps
 

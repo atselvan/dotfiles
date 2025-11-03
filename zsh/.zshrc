@@ -1,6 +1,6 @@
 # Your Macbook user name
 # https://support.apple.com/guide/mac-help/if-you-forgot-your-user-or-account-name-mh35548/mac
-export MAC_USER="atselvan"
+export MAC_USER=$(whoami)
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$MAC_USER/.oh-my-zsh"

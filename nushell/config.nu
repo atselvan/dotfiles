@@ -63,6 +63,7 @@ alias k = kubectl
 alias g = git
 alias gl = git pull
 alias gpr = git pull --rebase
+alias gst = git status
 alias ga = git add
 alias gaa = git add --all
 alias gc = git commit
