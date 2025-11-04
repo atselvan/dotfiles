@@ -11,6 +11,9 @@ NC='\033[0m' # No Color
 # Very simple loader: copies config files from the repo into the user's
 # home directory and overwrites any existing files.
 
+USER=$(whoami)
+echo $"Current user is: $USER"
+
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 copy_overwrite() {
@@ -29,9 +32,9 @@ copy_overwrite() {
 }
 
 echo -e "${GREEN}Repo dir: $REPO_DIR${NC}"
+echo -e "${GREEN}User: $USER${NC}"
 
 # zsh
-
 echo -e "${BLUE}Checking Oh My Zsh installation...${NC}"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo -e "${GREEN}Installing Oh My Zsh...${NC}"
@@ -65,7 +68,7 @@ copy_overwrite "$REPO_DIR/ghostty/config" "$HOME/Library/Application Support/com
 
 # nushell
 echo -e "${GREEN}Copying nushell configuration files...${NC}"
-copy_overwrite "$REPO_DIR/nushell/config.nu" "$HOME/.config/nushell/config.nu"
+copy_overwrite "$REPO_DIR/nushell/config.nu" "$HOME/Library/Application Support/nushell/config.nu"
 
 # starship
 echo -e "${GREEN}Copying starship configuration files...${NC}"
