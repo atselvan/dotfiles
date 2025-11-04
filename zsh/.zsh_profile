@@ -22,27 +22,17 @@ alias ls='ls -GFh'                          # Preferred 'ls' implementation
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
-alias .3='cd ../../../'                     # Go back 3 directory levels
-alias .4='cd ../../../../'                  # Go back 4 directory levels
-alias .5='cd ../../../../../'               # Go back 5 directory levels
-alias .6='cd ../../../../../../'            # Go back 6 directory levels
-alias .7='cd ../../../../../../../'         # Go back 7 directory levels
-alias .8='cd ../../../../../../../../'      # Go back 8 directory levels
 alias f='open -a Finder ./'                 # Opens current directory in MacOS Finder
 alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
 alias x='exit'								# Exit from a console tab
-trash () { command mv "$@" ~/.Trash ; }     # Moves a file to the MacOS trash
+alias c='clear'								# Clear the terminal screen
 alias src="source ~/.zshrc"					# Reload zsh
-
-# Open Mac Apps
-alias macpass='open /Applications/MacPass.app'
 
 # Git
 alias gloc="git ls-files | xargs wc -l"		# Get lines of code in a git repository
 
 # Golang
-alias gof="go fmt ./..."							# Formats all go files in the directory
-alias gox="gox -os='linux darwin' -arch='amd64' -output='bin/{{.Dir}}-{{.OS}}-{{.Arch}}'"	 # Gox Build
+alias gof="go fmt ./..."								# Formats all go files in the directory
 alias gocov='go test ./... -cover -coverprofile=c.out'	# Calculate coverage
 alias gocovh='go test ./... -cover -coverprofile=c.out && go tool cover -html=c.out -o coverage.html && open coverage.html' # Calculate coverage and genrate html
 
@@ -58,17 +48,8 @@ alias pycov="coverage run -m pytest"												# Run tests and calculate covera
 alias pycovr="pycov && coverage report --omit='venv/*'" 							# Calculate coverage and generate report
 alias pycovh="pycov && coverage html --omit='venv/*' && open htmlcov/index.html" 	# Calculate coverage and generate html report
 
-# docker
-alias dco="docker-compose"		# Run docker-compose
-
 # kubernetes
 alias k="kubectl"
-alias kg="kubectl get"
-alias kd="kubectl describe"
-alias kcg="kubectl config get-contexts"
-alias kcc="kubectl config current-context"
-alias kcs="kubectl config set-context"
-alias kcu="kubectl config use-context"
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
@@ -78,12 +59,11 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 #   FUNCTIONS
 #   -----------------------------
 
-#   gop: Set GOPATH to current directory
+# 	Moves a file to the MacOS trash
 #   ------------------------------------------
-gop(){
-	wd=`pwd`
-	export GOPATH=$wd
-}
+trash () { 
+	command mv "$@" ~/.Trash ; 
+}     
 
 #   git-clean-local-branch: Cleans local git branches that are not available on the server
 #   ------------------------------------------
@@ -94,8 +74,7 @@ git-clean-local-branch(){
 #   dc: Cleans exited containers and dangling images
 #   ------------------------------------------
 dc(){
-	docker ps -aq --no-trunc | xargs docker rm -f
-	docker images -q --filter dangling=true | xargs docker rmi
+	docker system prune -af --volumes
 }
 
 #   sonar-cloud-scan: Scans a Sonar Cloud project
@@ -107,22 +86,6 @@ sonar-cloud-scan(){
 		echo "./sonar-project.properties file was not found"
 	fi
 }
-
-#   sonar-scan: Scans a Sonar Project
-#   ------------------------------------------
-sonar-scan(){
-	if [ -f sonar-project.properties ]; then
-		if [ -z "$1" ]; then
-      		echo "Usage: sonar-scan <version>"
-		else
-			sonar-scanner -Dsonar.projectVersion=$1
-		fi
-	else
-		echo "./sonar-project.properties file was not found"
-	fi
-}
-
-
 
 #   ------------------------------------------
 #   EOF
