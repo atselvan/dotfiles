@@ -45,17 +45,46 @@ brew bundle -v
 
 ## Terminal Setup
 
-All the tools required to configure the terminal (ghostty) will be installed via the `brew bundle`. After installation, you need to load the configuration files to customize your terminal setup.
+All the tools required to configure the terminal will be installed via the brew bundle. After installation, you need to load the configuration files to customize your terminal setup.
 
 As a starting point, you can use the settings provided in this repository and then customize them to your liking.
 
-1. Review the `install.sh` script: [install.sh](https://github.com/atselvan/dotfiles/blob/master/install.sh)
-2. Make the script executable and run it:
+### Terminal Application
 
-```bash
-chmod +x ./install.sh
-./install.sh
-```
+The terminal of choice for this setup is Ghostty.
+
+### Shell Configurations
+The terminal setup includes configurations for the following shells:
+
+* ZSH: Installed with ohmyzsh and customized with powerlevel10k.
+* Nushell: Configured with starship for prompt customization.
+
+By default, macOS uses ZSH as the default shell. If you'd like to change your default shell to Nushell, follow the instructions provided in Step 4 below.
+
+### Steps
+
+1. Before running the installation script, update your Git configuration [git/gitconfig](https://github.com/atselvan/dotfiles/blob/master/git/gitconfig) and     Jujitsu configuration [jj/config.toml](https://github.com/atselvan/dotfiles/blob/master/jj/config.toml) with your username and email.
+2. Review the `install.sh` script: [install.sh](https://github.com/atselvan/dotfiles/blob/master/install.sh)
+3. Make the script executable and run it:
+
+   ```bash
+    chmod +x ./install.sh
+    ./install.sh
+    ```
+4. Default Shell Configuration
+
+   Add Nushell to your allowed shells list::
+
+   ```bash
+   which nu | sudo tee -a /etc/shells
+   ```
+
+   Then change your shell:
+   ```bash
+   chsh -s $(which nu)
+   ```
+
+   Log out and log back in. You’re now in Nu.
 
 Feel free to modify the configurations to better suit your preferences.
 
