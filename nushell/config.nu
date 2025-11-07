@@ -69,6 +69,9 @@ alias gaa = git add --all
 alias gc = git commit
 alias gcm = git commit -m
 alias gp = git push
+alias gco = git checkout
+alias gb = git branch
+alias gd = git diff
 
 # Get current git branch or short SHA if in detached HEAD
 def git-current-branch [] {

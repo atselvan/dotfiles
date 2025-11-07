@@ -14,3 +14,4 @@ background-blur-radius = 20
 window-save-state = always
 quit-after-last-window-closed = true
 shell-integration = zsh
+split-divider-color = #5b6078

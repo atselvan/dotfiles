@@ -20,6 +20,7 @@ brew "mas"
 brew "nvm"
 brew "jj"
 brew "gpg"
+brew "tree"
 
 # Cask's
 
@@ -48,6 +49,7 @@ cask "affinity"
 cask "archi"
 cask "lulu"
 cask "aldente"
+cask "syncthing-app"
 
 # MAC Store Apps
 
