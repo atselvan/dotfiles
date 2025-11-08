@@ -50,6 +50,7 @@ cask "archi"
 cask "lulu"
 cask "aldente"
 cask "syncthing-app"
+cask "keyboardcleantool"
 
 # MAC Store Apps
 
