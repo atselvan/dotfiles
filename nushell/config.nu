@@ -20,9 +20,14 @@
 #   -------------------------------
 #   ENVIRONMENT CONFIGURATION
 #   -------------------------------
-$env.PATH ++= ['/opt/homebrew/bin/']
+
+# Set config options
+
 $env.config.buffer_editor = "code"
 $env.config.render_right_prompt_on_last_line = true
+
+# Set Brew PATH
+$env.PATH ++= ['/opt/homebrew/bin/']
 
 #   -----------------------------
 #   IMPROVE TERMINAL EXPERIENCE

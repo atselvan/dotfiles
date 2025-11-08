@@ -11,6 +11,9 @@ This repo consists of dot files and configuration that I use to enhance my Mac s
   - [Get the Config Files](#get-the-config-files)
   - [Install Applications and Developer Tools](#install-applications-and-developer-tools)
   - [Terminal Setup](#terminal-setup)
+    - [Terminal Application](#terminal-application)
+    - [Shell Configurations](#shell-configurations)
+    - [Steps](#steps)
   - [Overview of Installed Applications](#overview-of-installed-applications)
 
 ## Mac Setup Guide
@@ -54,23 +57,25 @@ As a starting point, you can use the settings provided in this repository and th
 The terminal of choice for this setup is Ghostty.
 
 ### Shell Configurations
+
 The terminal setup includes configurations for the following shells:
 
-* ZSH: Installed with ohmyzsh and customized with powerlevel10k.
-* Nushell: Configured with starship for prompt customization.
+- ZSH: Installed with ohmyzsh and customized with powerlevel10k.
+- Nushell: Configured with starship for prompt customization.
 
 By default, macOS uses ZSH as the default shell. If you'd like to change your default shell to Nushell, follow the instructions provided in Step 4 below.
 
 ### Steps
 
-1. Before running the installation script, update your Git configuration [git/gitconfig](https://github.com/atselvan/dotfiles/blob/master/git/gitconfig) and     Jujitsu configuration [jj/config.toml](https://github.com/atselvan/dotfiles/blob/master/jj/config.toml) with your username and email.
+1. Before running the installation script, update your Git configuration [git/gitconfig](https://github.com/atselvan/dotfiles/blob/master/git/gitconfig) and Jujitsu configuration [jj/config.toml](https://github.com/atselvan/dotfiles/blob/master/jj/config.toml) with your username and email.
 2. Review the `install.sh` script: [install.sh](https://github.com/atselvan/dotfiles/blob/master/install.sh)
 3. Make the script executable and run it:
 
    ```bash
     chmod +x ./install.sh
     ./install.sh
-    ```
+   ```
+
 4. Default Shell Configuration
 
    Add Nushell to your allowed shells list::
@@ -80,6 +85,7 @@ By default, macOS uses ZSH as the default shell. If you'd like to change your de
    ```
 
    Then change your shell:
+
    ```bash
    chsh -s $(which nu)
    ```
@@ -130,3 +136,7 @@ Feel free to modify the configurations to better suit your preferences.
 | archi                   | https://www.archimatetool.com                           | A modeling tool for creating enterprise architecture diagrams.              |
 | lulu                    | https://objective-see.org/products/lulu.html            | A firewall for macOS.                                                       |
 | aldente                 | https://apphousekitchen.com/aldente                     | A tool for managing MacBook battery charging.                               |
+| lulu                    | https://objective-see.org/products/lulu.html            | A firewall for macOS.                                                       |
+| aldente                 | https://apphousekitchen.com/aldente                     | A tool for managing MacBook battery charging.                               |
+| syncthing-app           | https://syncthing.net/                                  | a GUI wrapper for Syncthing (file synchronization across devices).          |
+| keyboardcleantool       | https://folivora.ai/keyboardcleantool                   | a small utility to lock the keyboard for cleaning.                          |
