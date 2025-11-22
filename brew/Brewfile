@@ -1,5 +1,5 @@
 # Tap's
-
+"threedotslabs/tap"
 
 # Brew's
 
@@ -21,6 +21,7 @@ brew "nvm"
 brew "jj"
 brew "gpg"
 brew "tree"
+brew "threedotslabs/tap/tdl"
 
 # Cask's
 
@@ -37,7 +38,6 @@ cask "font-jetbrains-mono-nerd-font"
 cask "visual-studio-code"
 cask "git-credential-manager"
 cask "logi-options+"
-cask "logitech-g-hub"
 cask "zulu"
 cask "steam"
 cask "raycast"
@@ -51,6 +51,11 @@ cask "lulu"
 cask "aldente"
 cask "syncthing-app"
 cask "keyboardcleantool"
+cask "discord"
+cask "gramps"
+cask "tailscale-app"
+cask "antigravity"
+cask "onlyoffice"
 
 # MAC Store Apps
 
@@ -63,7 +68,11 @@ mas "Pastel", id: 413897608
 # VSCode plugins
 
 vscode "42crunch.vscode-openapi"
+vscode "akamud.vscode-theme-onedark"
+vscode "atommaterial.a-file-icon-vscode"
 vscode "batisteo.vscode-django"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
 vscode "davidanson.vscode-markdownlint"
 vscode "dbaeumer.vscode-eslint"
 vscode "digitalbrainstem.javascript-ejs-support"
@@ -110,6 +119,7 @@ vscode "sidthesloth.html5-boilerplate"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "stylelint.vscode-stylelint"
 vscode "tamasfe.even-better-toml"
+vscode "thang-nm.catppuccin-perfect-icons"
 vscode "thenuprojectcontributors.vscode-nushell-lang"
 vscode "tsandall.opa"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"

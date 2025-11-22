@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 # timestamped `backups/` folder inside this repo. This is the inverse of
 # `load.sh` which copies from repo -> home.
 
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 copy_backup() {
   local src="$1" dest_rel="$2"
@@ -54,7 +54,7 @@ copy_backup "$HOME/Library/Application Support/com.mitchellh.ghostty/config" "gh
 
 # nushell
 echo -e "${BLUE}Backing up nushell configuration files...${NC}"
-copy_backup "$HOME/.config/nushell/config.nu" "nushell/config.nu"
+copy_backup "$HOME/Library/Application Support/nushell/config.nu" "nushell/config.nu"
 
 # starship
 echo -e "${BLUE}Backing up starship configuration files...${NC}"

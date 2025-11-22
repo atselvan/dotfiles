@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 USER=$(whoami)
 echo $"Current user is: $USER"
 
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 copy_overwrite() {
   local src="$1" dest="$2"

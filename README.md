@@ -68,13 +68,13 @@ By default, macOS uses ZSH as the default shell. If you'd like to change your de
 ### Steps
 
 1. Before running the installation script, update your Git configuration [git/gitconfig](https://github.com/atselvan/dotfiles/blob/master/git/gitconfig) and Jujitsu configuration [jj/config.toml](https://github.com/atselvan/dotfiles/blob/master/jj/config.toml) with your username and email.
-2. Review the `install.sh` script: [install.sh](https://github.com/atselvan/dotfiles/blob/master/install.sh)
+2. Review the `install.sh` script: [scripts/install.sh](https://github.com/atselvan/dotfiles/blob/master/scripts/install.sh)
 3. Make the script executable and run it:
 
-   ```bash
-    chmod +x ./install.sh
-    ./install.sh
-   ```
+  ```bash
+  chmod +x ./scripts/install.sh
+  ./scripts/install.sh
+  ```
 
 4. Default Shell Configuration
 
