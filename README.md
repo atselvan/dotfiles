@@ -78,16 +78,16 @@ By default, macOS uses ZSH as the default shell. If you'd like to change your de
 
 4. Default Shell Configuration
 
-   Add Nushell to your allowed shells list::
+   Add ZSH to your allowed shells list::
 
    ```bash
-   which nu | sudo tee -a /etc/shells
+   which zsh | sudo tee -a /etc/shells
    ```
 
    Then change your shell:
 
    ```bash
-   chsh -s $(which nu)
+   chsh -s $(which zsh)
    ```
 
    Log out and log back in. You’re now in Nu.
@@ -96,47 +96,59 @@ Feel free to modify the configurations to better suit your preferences.
 
 ## Overview of Installed Applications
 
-| Application             | Homepage                                                | Purpose                                                                     |
-| ----------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------- |
-| zsh                     | https://www.zsh.org                                     | A powerful shell for interactive use and scripting.                         |
-| zsh-autosuggestions     | https://github.com/zsh-users/zsh-autosuggestions        | Suggests commands as you type based on history and completions.             |
-| zsh-completions         | https://github.com/zsh-users/zsh-completions            | Additional completion definitions for Zsh.                                  |
-| zsh-syntax-highlighting | https://github.com/zsh-users/zsh-syntax-highlighting    | Provides syntax highlighting for Zsh commands.                              |
-| powerlevel10k           | https://github.com/romkatv/powerlevel10k                | A fast and customizable Zsh theme.                                          |
-| nushell                 | https://www.nushell.sh                                  | A modern shell with a focus on structured data.                             |
-| starship                | https://starship.rs                                     | A minimal, fast, and customizable prompt for any shell.                     |
-| carapace                | https://github.com/rsteube/carapace                     | A command argument completion generator.                                    |
-| git                     | https://git-scm.com                                     | A distributed version control system.                                       |
-| go                      | https://go.dev                                          | A programming language for building fast and reliable software.             |
-| python                  | https://www.python.org                                  | A versatile programming language for scripting and application development. |
-| azure-cli               | https://learn.microsoft.com/cli/azure                   | Command-line tools for managing Azure resources.                            |
-| jq                      | https://stedolan.github.io/jq                           | A lightweight and flexible command-line JSON processor.                     |
-| mas                     | https://github.com/mas-cli/mas                          | A CLI for managing macOS App Store applications.                            |
-| nvm                     | https://github.com/nvm-sh/nvm                           | Node Version Manager for managing multiple Node.js versions.                |
-| jj                      | https://github.com/jj-vcs/jj                            | A text editor for programmers.                                              |
-| gpg                     | https://gnupg.org                                       | A tool for secure communication and data storage.                           |
-| arc                     | https://arc.net                                         | A modern web browser.                                                       |
-| docker-desktop          | https://www.docker.com/products/docker-desktop          | A GUI for managing Docker containers and images.                            |
-| ghostty                 | https://ghostty.org                                     | A terminal emulator with modern features.                                   |
-| notion                  | https://www.notion.so                                   | A workspace for notes, tasks, and collaboration.                            |
-| postman                 | https://www.postman.com                                 | A platform for API development and testing.                                 |
-| rectangle               | https://rectangleapp.com                                | A window management app for macOS.                                          |
-| tableplus               | https://tableplus.com                                   | A modern database management tool.                                          |
-| jetbrains-toolbox       | https://www.jetbrains.com/toolbox-app                   | A manager for JetBrains IDEs.                                               |
-| font-jetbrains-mono     | https://www.jetbrains.com/lp/mono                       | A developer-friendly font.                                                  |
-| visual-studio-code      | https://code.visualstudio.com                           | A popular code editor for developers.                                       |
-| git-credential-manager  | https://github.com/git-ecosystem/git-credential-manager | A secure Git credential storage solution.                                   |
-| logi-options+           | https://www.logitech.com                                | Software for customizing Logitech devices.                                  |
-| steam                   | https://store.steampowered.com                          | A platform for gaming and game management.                                  |
-| raycast                 | https://www.raycast.com                                 | A productivity tool for launching apps and performing tasks.                |
-| iina                    | https://iina.io                                         | A modern media player for macOS.                                            |
-| monitorcontrol          | https://github.com/MonitorControl/MonitorControl        | A tool for controlling external monitor brightness and volume.              |
-| alt-tab                 | https://alt-tab-macos.netlify.app                       | A Windows-like Alt-Tab switcher for macOS.                                  |
-| affinity                | https://affinity.serif.com                              | A suite of professional creative software.                                  |
-| archi                   | https://www.archimatetool.com                           | A modeling tool for creating enterprise architecture diagrams.              |
-| lulu                    | https://objective-see.org/products/lulu.html            | A firewall for macOS.                                                       |
-| aldente                 | https://apphousekitchen.com/aldente                     | A tool for managing MacBook battery charging.                               |
-| lulu                    | https://objective-see.org/products/lulu.html            | A firewall for macOS.                                                       |
-| aldente                 | https://apphousekitchen.com/aldente                     | A tool for managing MacBook battery charging.                               |
-| syncthing-app           | https://syncthing.net/                                  | a GUI wrapper for Syncthing (file synchronization across devices).          |
-| keyboardcleantool       | https://folivora.ai/keyboardcleantool                   | a small utility to lock the keyboard for cleaning.                          |
+| Application                   | Homepage                                                  | Purpose                                                                            |
+|-------------------------------|-----------------------------------------------------------|------------------------------------------------------------------------------------|
+| zsh                           | https://www.zsh.org                                       | A powerful shell for interactive use and scripting.                                |
+| zsh-autosuggestions           | https://github.com/zsh-users/zsh-autosuggestions          | Suggests commands as you type based on history and completions.                    |
+| zsh-completions               | https://github.com/zsh-users/zsh-completions              | Additional completion definitions for Zsh.                                         |
+| zsh-syntax-highlighting       | https://github.com/zsh-users/zsh-syntax-highlighting      | Provides syntax highlighting for Zsh commands.                                     |
+| powerlevel10k                 | https://github.com/romkatv/powerlevel10k                  | A fast and customizable Zsh theme.                                                 |
+| nushell                       | https://www.nushell.sh                                    | A modern shell with a focus on structured data.                                    |
+| starship                      | https://starship.rs                                       | A minimal, fast, and customizable prompt for any shell.                            |
+| carapace                      | https://github.com/rsteube/carapace                       | A command argument completion generator.                                           |
+| git                           | https://git-scm.com                                       | A distributed version control system.                                              |
+| jj                            | https://jj-vcs.github.io/jj/                              | A Git-compatible version control system.                                           |
+| go                            | https://go.dev                                            | A programming language for building fast and reliable software.                    |
+| tdl                           | https://github.com/ThreeDotsLabs                          | A command-line tool from the Three Dots Labs Homebrew tap.                         |
+| protobuf                      | https://protobuf.dev                                      | A language-neutral format for serializing structured data.                         |
+| python                        | https://www.python.org                                    | A versatile programming language for scripting and application development.        |
+| nvm                           | https://github.com/nvm-sh/nvm                             | Node Version Manager for managing multiple Node.js versions.                       |
+| node                          | https://nodejs.org                                        | JavaScript runtime for server-side and command-line applications.                  |
+| azure-cli                     | https://learn.microsoft.com/cli/azure                     | Command-line tools for managing Azure resources.                                   |
+| jq                            | https://jqlang.org                                        | A lightweight and flexible command-line JSON processor.                            |
+| mas                           | https://github.com/mas-cli/mas                            | A CLI for managing macOS App Store applications.                                   |
+| gpg                           | https://gnupg.org                                         | A tool for secure communication and data storage.                                  |
+| tree                          | https://oldmanprogrammer.net/source.php?dir=projects/tree | Displays directory structures in a tree-like format.                               |
+| thebrowsercompany-dia         | https://diabrowser.com                                    | A web browser from The Browser Company.                                            |
+| docker-desktop                | https://www.docker.com/products/docker-desktop            | A GUI for managing Docker containers and images.                                   |
+| ghostty                       | https://ghostty.org                                       | A terminal emulator with modern features.                                          |
+| notion                        | https://www.notion.so                                     | A workspace for notes, tasks, and collaboration.                                   |
+| postman                       | https://www.postman.com                                   | A platform for API development and testing.                                        |
+| rectangle                     | https://rectangleapp.com                                  | A window management app for macOS.                                                 |
+| tableplus                     | https://tableplus.com                                     | A modern database management tool.                                                 |
+| jetbrains-toolbox             | https://www.jetbrains.com/toolbox-app                     | A manager for JetBrains IDEs.                                                      |
+| font-jetbrains-mono           | https://www.jetbrains.com/lp/mono                         | A developer-friendly font.                                                         |
+| font-jetbrains-mono-nerd-font | https://www.nerdfonts.com                                 | JetBrains Mono patched with additional developer-focused glyphs.                   |
+| visual-studio-code            | https://code.visualstudio.com                             | A popular code editor for developers.                                              |
+| git-credential-manager        | https://github.com/git-ecosystem/git-credential-manager   | A secure Git credential storage solution.                                          |
+| logi-options+                 | https://www.logitech.com                                  | Software for customizing Logitech devices.                                         |
+| zulu                          | https://www.azul.com/downloads/                           | A Java Development Kit distribution.                                               |
+| steam                         | https://store.steampowered.com                            | A platform for gaming and game management.                                         |
+| raycast                       | https://www.raycast.com                                   | A productivity tool for launching apps and performing tasks.                       |
+| iina                          | https://iina.io                                           | A modern media player for macOS.                                                   |
+| monitorcontrol                | https://github.com/MonitorControl/MonitorControl          | A tool for controlling external monitor brightness and volume.                     |
+| affinity                      | https://affinity.serif.com                                | A suite of professional creative software.                                         |
+| aldente                       | https://apphousekitchen.com/aldente                       | A tool for managing MacBook battery charging.                                      |
+| syncthing-app                 | https://syncthing.net/                                    | A GUI wrapper for Syncthing file synchronization across devices.                   |
+| keyboardcleantool             | https://folivora.ai/keyboardcleantool                     | A small utility to lock the keyboard for cleaning.                                 |
+| discord                       | https://discord.com                                       | A communication app for voice, video, and text chat.                               |
+| tailscale-app                 | https://tailscale.com                                     | A mesh VPN for connecting devices securely.                                        |
+| onlyoffice                    | https://www.onlyoffice.com                                | An office suite for viewing and editing documents.                                 |
+| raspberry-pi-imager           | https://www.raspberrypi.com/software/                     | Writes Raspberry Pi OS and other images to storage devices.                        |
+| sony-ps-remote-play           | https://remoteplay.dl.playstation.net/remoteplay/         | Streams PlayStation gameplay to a Mac.                                             |
+| HP                            | https://www.hp.com                                        | Software and utilities for HP devices.                                             |
+| Notion Web Clipper            | https://www.notion.so/web-clipper                         | Saves web pages to Notion.                                                         |
+| WhatsApp Messenger            | https://www.whatsapp.com                                  | Messaging and calling app.                                                         |
+| Pandan                        | https://apps.apple.com/us/app/pandan/id1569600264         | Tracks active computer use to support time awareness.                              |
+| Pastel                        | https://apps.apple.com/us/app/pastel/id413897608          | A macOS app for creating and managing color palettes.                              |
+| Amphetamine                   | https://apphousekitchen.com/amphetamine/                  | Prevents your Mac from going to sleep.                                             |
