@@ -38,7 +38,7 @@ git clone https://github.com/atselvan/dotfiles.git
 
 This repository includes a `Brewfile` that lists all the applications and developer tools you might need. You can customize this file to suit your workflow by adding or removing tools.
 
-Review the `Brewfile` here: [Brewfile](https://github.com/atselvan/dotfiles/blob/master/Brewfile)
+Review the `Brewfile` here: [Brewfile](https://github.com/atselvan/dotfiles/blob/master/brew/Brewfile)
 
 To install all the tools listed in the `Brewfile`, run the following command:
 
